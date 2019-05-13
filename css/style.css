@@ -1,114 +1,112 @@
-/*---------------------------------
-
-　共通設定
-
----------------------------------*/
-html {
-	height: 100%;
+body {
+    color: black;
+    margin: 0px;
+    padding: 0px;
 }
 
-body {
-	height: 100%;
-
+h1 {
+    background-color: #f0d9da;
     font-family: 'Caveat', cursive;
     font-style: normal;
-    font-size: 5.6rem
+    font-size: 3.6rem;
+    font-weight: normal;
+    margin: 0px;
+    padding: 15px;
+    text-align: center;
 }
 
 a {
-	color: #FFFFFF;
-	text-decoration: none;
+    text-decoration: none;
+    color: black;
 }
 
-/*---------------------------------
-
-　タイトル
-
----------------------------------*/
-/* コンテナ、ボックスの見た目の設定 */
 .container {
-  border: 1px solid #ffffff;
-  box-sizing: border-box;
-  width: 100%;
-  height: 97.5%;
-  margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f0d9da;
 }
 
-.container p {
-  width: 100%;
-  height: 100%;
-  border: 1px black;
+.content {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    justify-content: center;
 }
 
-/* 中央揃えのためのコード（3行） */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.item {
+    background-color: white;
+    text-align: center;
+    margin: 10px;
+    padding: 35px;
+    padding-right: 35px;
+    padding-left: 35px;
+    border-radius: 10px;
 }
 
-/*---------------------------------
+img {
+    width: 400px;
+    height: 300px;
+}
 
-　タイトルフェードイン
+.tag_area07 ul {
+    margin: 15px;
+    padding: 0px;
+    list-style: none;
+}
 
----------------------------------*/
+.tag_area07 ul li {
+    display: inline-block;
+    margin: 0 .3em .3em 0;
+    padding: 0;
+}
 
-body {
+.tag_area07 ul li a {
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 1em 0 .75em;
+    background-color: #d69498;
+    border-radius: 30px;
     color: #fff;
-    background: #f0d9da;
-	text-align: center;
-	overflow-x: hidden;
-	overflow-y: hidden;
+    font-size: 12px;
+    text-decoration: none;
+    -webkit-transition: .2s;
+    transition: .2s;
 }
 
-span {
-    color: transparent;
-    animation: blur 10s ease-out infinite;
+.tag_area07 ul li a:hover {
+    background-color: #555;
+    color: #fff;
 }
 
-span:nth-child(1) {
-    animation-delay: 0.1s;
-}
-span:nth-child(2) {
-    animation-delay: 0.2s;
-}
-span:nth-child(3) {
-    animation-delay: 0.3s;
+.tag_area07 ul li a:before {
+    content: "#";
+    padding-right: 2px;
 }
 
-@keyframes blur {
-    0%      {text-shadow:  0 0 100px #fff; opacity:0;}
-    5%      {text-shadow:  0 0 90px #fff;}
-    15%     {opacity: 1;}
-    20%     {text-shadow:  0 0 0px #fff;}
-    80%     {text-shadow:  0 0 0px #fff;}
-    85%     {opacity: 1;}
-    95%     {text-shadow:  0 0 90px #fff;}
-    100%    {text-shadow:  0 0 100px #fff; opacity:0;}
+img {
+    border: 1px lightgray solid;
 }
 
-/*---------------------------------
+/* ##############  599px以下 ############## */
+@media (max-width : 599px) {
+    .content {
+        width: 85%;
+    }
+}
 
-　ページ遷移時アニメーション
+/* ##############  600px以上 ############## */
+@media (min-width : 600px) and (max-width : 767px) {
+    .content {
+        width: 85%;
+    }
+}
 
----------------------------------*/
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color:#fff;  /* 背景カラー */
-    z-index: 9999;  /* 一番手前に */
-    pointer-events: none;  /* 他の要素にアクセス可能にするためにポインターイベントは無効に */
-    opacity: 0;  /* 初期値 : 透過状態 */
-    -webkit-transition: opacity .8s ease;  /* アニメーション時間は 0.8秒 */
-    transition: opacity .8s ease;
-  }
-  body.fadeout::after {
-    opacity: 1;
-  }
+/* ##############  768px以上 ############## */
+@media (min-width : 768px) and (max-width : 1189px) {}
 
-  
+/* ############## 1190px以上 ############## */
+@media (min-width : 1190px) {}
