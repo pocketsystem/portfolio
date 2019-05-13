@@ -1,0 +1,7 @@
+DirectoryIndex portfolio.html
+Options -Indexes
+AuthUserFile /home/pocketsystem/www/portfolio/.htpasswd
+AuthType Basic
+AuthName "Web access"
+Satisfy all
+Order deny,allow
